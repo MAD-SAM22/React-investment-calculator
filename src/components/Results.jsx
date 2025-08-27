@@ -9,9 +9,9 @@ export default function Results({ UserInputs }) {
             <tr>
                 <th>Year</th>
                 <th>Investment Value</th>
-                <th>Interset (Year)</th>
-                <th>Total Interset</th>
-                <th>Invested Capital</th>
+                <th>Interest (Year)</th>
+                <th>Total Interest</th>
+                <th>Total Investment</th>
             </tr>
         </thead>
         <tbody>
