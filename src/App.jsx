@@ -11,6 +11,10 @@ function App() {
     duration: 10
   });
 
+  const validateNumber = UserInputFields.initialInvestment >= 0 &&
+    UserInputFields.annualInvestment >= 0 &&
+    UserInputFields.expectedReturn >= 0 &&
+    UserInputFields.duration > 0;
   function handleInputChange(inputIdentifier, value) {
     setUserInputFields((prevInput) => {
       return {
@@ -24,7 +28,8 @@ function App() {
     <>
       <Header />
       <UserInput handleChange={handleInputChange} UserInputs={UserInputFields} />
-      <Results UserInputs={UserInputFields} />
+      {validateNumber && <Results UserInputs={UserInputFields} />}
+      {!validateNumber && <p className="center">Please enter valid non-negative numbers .</p>}
     </>
   )
 }
